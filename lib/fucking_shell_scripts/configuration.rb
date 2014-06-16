@@ -43,6 +43,7 @@ module FuckingShellScripts
     def read_and_parse_server_options
       options_string_hash = default_options.merge(server_options).merge(@command_line_options)
       @options = options_string_hash.symbolize_keys_deep!
+      @options[:files] = [] if @options[:files].nil?
     end
 
     def type
